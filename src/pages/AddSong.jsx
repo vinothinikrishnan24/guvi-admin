@@ -74,7 +74,7 @@ const AddSong = () => {
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.error('Error occurred while adding song');
+      toast.error(error?.response?.data?.error || 'Error occurred while adding song');
     } finally {
       setLoading(false);
     }
